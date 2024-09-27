@@ -2,18 +2,21 @@ import { Button, Card } from "react-bootstrap";
 import { useState } from "react";
 
 export default function Candidato(props) {
-    const[curtidas, setCurtidas]=useState(props.Candidato.curtidas)
+    const[curtidas, setCurtidas]=useState(props.candidato.curtidas)
 
-    function clicarCandidato(Candidato)
+    /*function clicarCandidato(Candidato)
     {
         props.setDetalhes(true);
-        props.setSelecionar(props.candidato);
-    }
+        props.setSelecionar(props.Candidato);
+    }*/
 
     function adicionarCurtidas(Candidato)
     {
         setCurtidas(Candidato.setCurtidas+1);
         Candidato.curtidas=Candidato.curtidas+1;
+        /*props.setListaCandidato(props.listaCandidato.map((candidato)=>{
+            if()
+        }))*/
     }
 
     function tirarCurtidas(Candidato)
@@ -21,18 +24,20 @@ export default function Candidato(props) {
         setCurtidas(Candidato.setCurtidas-1);
         Candidato.curtidas=Candidato.curtidas-1;
     }
+
+    //props setCurtidas(props.listaCandidatos)
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" height="300" width="300" src={props.candidato.avatar} />
             <Card.Body>
-                <Card.Title>{"candidato: " + props.Candidato.nome}</Card.Title>
+                <Card.Title>{"candidato: " + props.candidato.nome}</Card.Title>
                 <Card.Text>
-                    <p>{"Email: " + props.Candidato.email}</p>
+                    <p>{"Email: " + props.candidato.email}</p>
                     <p>{"Curtidas: "+ curtidas}</p>
-                    <p>{"Questionamentos: "+props.Candidato.questionario}</p>
+                    <p>{"Questionamentos: "+ props.candidato.questionario}</p>
                 </Card.Text>
                 <Button onClick={()=>{
-                    adicionarCurtidas(props.Candidato)
+                    adicionarCurtidas(props.candidato)
                 }} variant="primary"> {//Curtir
                                            }
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -40,7 +45,7 @@ export default function Candidato(props) {
                     </svg>
                 </Button> 
                 <Button onClick={()=>{
-                    tirarCurtidas(props.Candidato)
+                    tirarCurtidas(props.candidato)
                 }} variant="primary"> {//Não Curtir
                                            }
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">

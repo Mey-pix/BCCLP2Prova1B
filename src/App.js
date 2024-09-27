@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import TelaPrincipal from "./Componentes/Telas/TelaPrincipal";
+import Candidato from "./Componentes/Telas/elementos/Candidato";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<TelaPrincipal />} />
+                <Route path="/" element={<Candidato/>}/>
             </Routes>
         </BrowserRouter>
     </div>
