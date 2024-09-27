@@ -3,27 +3,24 @@ import { useState } from "react";
 
 export default function Candidato(props) {
     const[curtidas, setCurtidas]=useState(props.candidato.curtidas)
-
+    const[descurtidas,setDescurtidas]=useState(props.candidato.descurtidas)
     /*function clicarCandidato(Candidato)
     {
         props.setDetalhes(true);
         props.setSelecionar(props.Candidato);
     }*/
 
-    function adicionarCurtidas(Candidato)
+   /* function adicionarCurtidas(Candidato)
     {
         setCurtidas(Candidato.setCurtidas+1);
-        Candidato.curtidas=Candidato.curtidas+1;
-        /*props.setListaCandidato(props.listaCandidato.map((candidato)=>{
-            if()
-        }))*/
+        Candidato.curtidas=Candidato.curtidas+1
     }
 
     function tirarCurtidas(Candidato)
     {
-        setCurtidas(Candidato.setCurtidas-1);
-        Candidato.curtidas=Candidato.curtidas-1;
-    }
+        setDescurtidas(Candidato.setDescurtidas+1);
+        Candidato.curtidas=Candidato.curtidas+1;
+    }*/
 
     //props setCurtidas(props.listaCandidatos)
     return (
@@ -34,10 +31,12 @@ export default function Candidato(props) {
                 <Card.Text>
                     <p>{"Email: " + props.candidato.email}</p>
                     <p>{"Curtidas: "+ curtidas}</p>
+                    <p>{"Descurtidas: "+ descurtidas}</p>
                     <p>{"Questionamentos: "+ props.candidato.questionario}</p>
                 </Card.Text>
                 <Button onClick={()=>{
-                    adicionarCurtidas(props.candidato)
+                    setCurtidas(curtidas + 1)
+                    //adicionarCurtidas(props.candidato)
                 }} variant="primary"> {//Curtir
                                            }
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -45,7 +44,7 @@ export default function Candidato(props) {
                     </svg>
                 </Button> 
                 <Button onClick={()=>{
-                    tirarCurtidas(props.candidato)
+                    setDescurtidas(descurtidas + 1)
                 }} variant="primary"> {//Não Curtir
                                            }
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
