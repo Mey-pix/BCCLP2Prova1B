@@ -12,7 +12,7 @@ export default function DetalhesCandidato(props) {
             <h3>Curtidas: {props.clicarCandidato.curtidas}</h3>
             <h3>Descurtidas: {props.clicarCandidato.descurtidas}</h3>
             <h3>Questionamentos: {
-                props.clicarCandidato.questionamentos.map((questionamento)=>{
+                props.candidato.questionamentos.map((questionamento)=>{
                     return(
                         <h4>{questionamento}</h4>
                     );

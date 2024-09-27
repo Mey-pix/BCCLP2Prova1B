@@ -1,4 +1,5 @@
 import Candidato from "./elementos/Candidato";
+import { useState } from "react";
 export default function GridCandidatos(props) {
 
     if (props?.listaCandidatos) {
